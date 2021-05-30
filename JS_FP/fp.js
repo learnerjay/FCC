@@ -37,3 +37,8 @@ const getTea = (numOfCups) => {
 // Only change code below this line
 const tea4TeamFCC = getTea(40);
 // Only change code above this line
+/*
+Pure Functions  - Give the same output till the input remains same.
+Functions - mutations/changes outside the function are handled carefully
+Isolated function - function accessing the mutated state as a parameter
+*/
