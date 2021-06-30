@@ -15,6 +15,21 @@ function diffArray(arr1, arr2) {
 
 diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 /*
-Another solution
+1. Another solution
 return arr1.concat(arr2).filter((elem,_,arr) => arr.lastIndexOf(elem)==arr.indexOf(elem));
+
+2.
+var newArr = [];
+
+  for (var i = 0; i < arr1.length; i++) {
+    if(arr2.indexOf(arr1[i]) < 0){
+      newArr.push(arr1[i]);
+    }
+  }
+  for (var j = 0; j < arr2.length; j++) {
+    if(arr1.indexOf(arr2[j]) < 0){
+      newArr.push(arr2[j]);
+    }
+  }
+    return newArr;
 */
