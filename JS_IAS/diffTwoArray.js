@@ -47,6 +47,5 @@ var newArr = [];
 
   onlyInFirst(arr1, arr2);
   onlyInFirst(arr2, arr1);
-
   return newArr;
 */
