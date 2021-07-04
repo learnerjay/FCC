@@ -24,3 +24,7 @@ Array.prototype.myFilter = function(callback) {
 var new_s = s.myFilter(function(item) {
   return item % 2 === 1;
 });
+/*
+Another solution :
+ this.forEach(a => newArray.push(callback(a)));
+ */
