@@ -27,4 +27,13 @@ var new_s = s.myFilter(function(item) {
 /*
 Another solution :
  this.forEach(a => newArray.push(callback(a)));
+ 
+ 3rd solution
+ Array.prototype.myMap = function(callback, arr= [], i=0) {
+  // Only change code below this line
+  return i < this.length ? this.myMap(callback, arr.concat(callback(this[i])), i + 1)
+  : arr;
+  // Only change code above this line
+  return newArray;
+};
  */
