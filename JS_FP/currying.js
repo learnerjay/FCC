@@ -49,3 +49,8 @@ function add(x) {
   // Only change code above this line
 }
 add(10)(20)(30);
+
+/*
+Single line solution
+return y => z =>  x+y+z;
+*/
