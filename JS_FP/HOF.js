@@ -13,7 +13,7 @@ const squareList = arr => {
   return arr
   .filter(num=> num > 0 && num % parseInt(num) === 0)
   .map(num => Math.pow(num, 2));
-  // Only change code above this line
+  // /Only change code above this line
 };
 
 const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
