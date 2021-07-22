@@ -32,6 +32,11 @@ Solution
     .style('width',`${w}px`)
     .style('height',`${h}px`);
                   // Add your code above this line
+
+    /**
+    .attr("width",w)
+    .attr("height",h);
+    **/
   </script>
 </body>
 
