@@ -17,3 +17,9 @@ function sumAll(arr) {
 }
 
 sumAll([1, 4]);
+
+<!--Different way of accessing array on elements with spread opertaror --!>
+/**
+let smallest = Math.min(..arr);
+let largest = Math.max(..arr);
+**/
