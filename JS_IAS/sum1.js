@@ -23,3 +23,11 @@ sumAll([1, 4]);
 let smallest = Math.min(..arr);
 let largest = Math.max(..arr);
 **/
+
+/*Another short hand way
+  let sum = 0;
+  for (let i = Math.min(...arr); i <= Math.max(...arr); i++) {
+    sum += i;
+  }
+  return sum;
+*/
