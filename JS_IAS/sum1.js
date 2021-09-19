@@ -37,3 +37,11 @@ const [first, last] = [...arr].sort((a, b) => a - b);
     ? first + sumAll([first + 1, last])
     : first;
 */
+/*Solving through math function
+ const start= arr[0];
+  const end = arr[1];
+  
+  const count = Math.abs(startNum - endNum) + 1;
+  const sum = ((start + end) * count) / 2;
+  return sum;*/
+
