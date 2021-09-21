@@ -10,9 +10,9 @@ let xScale
 let xAxisScale 
 let yAxisScale
 
-let width = 800
-let height = 600
-let padding = 20
+let width = 600
+let height = 400
+let padding = 80
 
 let svg = d3.select('svg')
 
@@ -44,7 +44,7 @@ let generateScales = () =>{
                       .domain([d3.min(datesArray), d3.max(datesArray)])
                       .range([padding, width-padding])
                                
-      YAxisScale = d3.scaleLinear()
+      yAxisScale = d3.scaleLinear()
                       .domain([0, d3.max(values , (item) => { return item[1]
                       })])
                       /*Return the items of poplulation from index 1*/
@@ -54,33 +54,52 @@ let generateScales = () =>{
   
 }
 let drawBars = () =>{
-  svg.selectAll('rect')
-    .data(values)
-    .enter()
-    .append('rect')
-    .attr('class','bar')
-    .attr('width', (width - (2 * padding)) / values.length)
-    .attr('data-date', (item) =>{
-      return item[0]
-    })
-    .attr('data-gdp', (item) =>{
-      return item[1]
-    })
-    .attr('height', (item) => {
-      return heightScale(item[1])
-    })
-  	.attr('x', (item, index) =>{
-       return xScale(index)
-    })
-    .attr('y', (item) => {
-    	return(height - padding) - heightScale(item[1])
-    })
+	let tooltip = d3.select('body')
+	.append('div')
+	.attr('id','tooltip')
+	.style('visibility','hidden')
+	.style('width','auto')
+	.style('height','auto')
+	 
+	svg.selectAll('rect')
+	.data(values)
+	.enter()
+	.append('rect')
+	.attr('class','bar')
+	.attr('width', (width - (2 * padding)) / values.length)
+	.attr('data-date', (item) =>{
+	return item[0]
+	})
+	.attr('data-gdp', (item) =>{
+	return item[1]
+	})
+	.attr('height', (item) => {
+	return heightScale(item[1])
+	})
+	.attr('x', (item, index) =>{
+	return xScale(index)
+	})
+	.attr('y', (item) => {
+	return(height - padding) - heightScale(item[1])
+	})
+	.on('mouseover', (item) =>{
+	tooltip.transition()
+	.style('visibility','visible')
+	tooltip.text(item[0])
+
+	document.querySelector('#tooltip').setAttribute('data-date',item[0])
+	})
+	.on('mouseout', (item) =>{
+	tooltip.transition()
+	.style('visibility','hidden')
+	})
 }
 let generateAxes = () =>{
 	let xAxis = d3.axisBottom(xAxisScale)
 	svg.append('g')
 	.call(xAxis)
 	.attr('id','x-axis')
+	.attr('transform','translate(0,' + (height-padding) + ')')
     
 	let yAxis = d3.axisLeft(yAxisScale)
 	svg.append('g')
