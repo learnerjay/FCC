@@ -7,3 +7,12 @@ body{
 svg{
   background-color: lightyellow;
 }
+.bar:hover{
+  fill: #c1e7ff
+}
+#title{
+    font-size: 30px;
+}
+#tooltip{
+    font-size: 28px;
+}
