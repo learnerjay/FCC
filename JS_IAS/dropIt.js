@@ -14,3 +14,10 @@ function dropElements(arr, func) {
 }
 
 dropElements([1, 2, 3], function(n) {return n < 3; });
+/*
+Alternate Solution through js native function
+ >> findIndex help the index position of function 
+ >> & than slice helps us eliminating the rest function
+let sliceIndex = arr.findIndex(func)
+  return arr.slice(sliceIndex >= 0 ? sliceIndex : arr.length);
+*/
