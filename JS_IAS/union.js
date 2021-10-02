@@ -24,3 +24,13 @@ function uniteUnique(arr) {
 }
 
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+/** Es 6
+function uniteUnique(...arrays) {
+  //using the spread operator to flat the array
+  const flatArray = [].concat(...arrays);
+
+  // create a Set allows to remove duplicates 
+  return [...new Set(flatArray)];
+}
+**/
