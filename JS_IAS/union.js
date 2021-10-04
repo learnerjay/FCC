@@ -33,4 +33,23 @@ function uniteUnique(...arrays) {
   // create a Set allows to remove duplicates 
   return [...new Set(flatArray)];
 }
+
+Solved it using passsing 3 diff arrays & checking if not pushed than add
+function uniteUnique(arr1,arr2,arr3) {
+  let finalArr = [];
+  for(var i=0;i<arguments.length;i++){
+    var arrArguments = arguments[i];
+    
+    for(var j=0;j<arrArguments.length;j++){
+      var indexValue = arrArguments[j];
+
+      if(finalArr.indexOf(indexValue) < 0){
+        finalArr.push(indexValue); 
+      }
+    } 
+  }
+  return finalArr;
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1],[6,7,8]);
 **/
