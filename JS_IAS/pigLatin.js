@@ -11,18 +11,17 @@ Translate the provided string to Pig Latin. Input strings are guaranteed to be E
 */
 Solution
 function translatePigLatin(str) {
-   if(str.charAt(0) == 'a'|'e'|'i'|'o'|'u'){
-     return str+'way';
-   }else{
-     return str.substr(1)+str[0]+'ay';
-   }
+   var pigLatin = "";
+  var regEx = /[aeiou]/gi;
+  if(str[0].match(regEx)){
+    pigLatin = str + "way";
+  }else if(str.match(regEx) === null){
+    pigLatin = str + "ay";
+  }else{
+    var vowelIndex = str.indexOf(str.match(regEx)[0]) 
+      pigLatin = str.substr(vowelIndex) + str.substr(0,vowelIndex) + "ay"; 
+    }
+  return pigLatin;
 }
 
 translatePigLatin("california");
-//Solved 3 cases , only simple one 
-// running tests
-translatePigLatin("glove") should return the string oveglay.
-translatePigLatin("eight") should return the string eightway.
-Should handle words where the first vowel comes in the middle of the word.  translatePigLatin("schwartz") should return the string artzschway.
-Should handle words without vowels. translatePigLatin("rhythm") should return the string rhythmay.
-// tests completed
